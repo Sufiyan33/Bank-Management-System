@@ -36,9 +36,9 @@ The Bank Management System allow you to perform various banking operation includ
 - Jackson
 
 # Installation and Setup
-- Fork repository: git clone: https://github.com/Sufiyan33/Bank-Management-System.git
+- Fork repository: git clone: ```https://github.com/Sufiyan33/Bank-Management-System.git```
 - Configure MySQL: Set up a MySQL database and update the database credentials in application.properties.
-- Build and run the project: mvn spring-boot:run
+- Build and run the project: `mvn spring-boot:run`
 
 # Error Handling
 - For error handling I am using global exception handling to throw exceptions.

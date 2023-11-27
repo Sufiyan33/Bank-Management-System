@@ -33,12 +33,12 @@ The Bank Management System allow you to perform various banking operation includ
 
 # How you can Contribute
 - First of all most welcome & I encourage you to contribute to the project and help us make it even better. If you are interested in contributing, follow these steps:
-🔺Fork the Repository: Click on the "Fork" button on the top right corner of the GitHub repository page. This will create a copy of the repository in your GitHub account.
-🔺Clone the Forked Repository: Open your terminal or command prompt and use the following command to clone the repository to your local machine:
-🔺OR you can also clone in eclise or intelij idea using plugin:
+- 🔺Fork the Repository: Click on the "Fork" button on the top right corner of the GitHub repository page. This will create a copy of the repository in your GitHub account.
+- 🔺Clone the Forked Repository: Open your terminal or command prompt and use the following command to clone the repository to your local machine:
+- 🔺OR you can also clone in eclise or intelij idea using plugin:
 git clone https://github.com/your-username/Bank-Management-System.git
 Replace your-username with your GitHub username.
-🔺Create a New Branch: Go to folder where you have cloned & create a new branch for your changes & start working on it.
+- 🔺Create a New Branch: Go to folder where you have cloned & create a new branch for your changes & start working on it.
 
 # Follow
 - If you liked it then don't forget to follow me and share this in your linked tagging me.

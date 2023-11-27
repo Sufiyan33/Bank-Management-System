@@ -13,3 +13,17 @@ The Bank Management System allow you to perform various banking operation includ
 - **Cash Deposit and Withdrawal:** Users can deposit and withdraw cash from their accounts.
 - **Fund Transfer:** Users can transfer funds to other accounts within the system.
 - **Transaction History:** Users can view their transaction history.
+
+# Technologies used
+- Java Spring Boot Framework
+- Spring Security for authentication
+- JWT (JSON Web Token) for secure API authentication
+- MySQL for data storage
+- Hibernate for object-relational mapping
+- Maven for project management
+- Postman for API testing
+
+# Installation and Setup
+- Fork repository: git clone: 
+- Configure MySQL: Set up a MySQL database and update the database credentials in application.properties.
+- Build and run the project: mvn spring-boot:run

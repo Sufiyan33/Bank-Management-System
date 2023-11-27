@@ -23,6 +23,18 @@ The Bank Management System allow you to perform various banking operation includ
 - Maven for project management
 - Postman for API testing
 
+# Dependencies
+- Spring data jpa
+- Spring web
+- Spring start validation
+- Spring security
+- Spring devtools
+- Spring starter mail
+- Spring starter cache
+- Mysql connector
+- Jwt
+- Jackson
+
 # Installation and Setup
 - Fork repository: git clone: https://github.com/Sufiyan33/Bank-Management-System.git
 - Configure MySQL: Set up a MySQL database and update the database credentials in application.properties.

@@ -3,7 +3,7 @@ The Bank Management System allow you to perform various banking operation includ
 
 # Prerequisites
 - Basic knowledge of Java and the Spring Framework.
-- A code editor of your choice (e.g., VSCode, IntelliJ IDEA, Eclipse).
+- A code editor of your choice (e.g., `VSCode, IntelliJ IDEA, Eclipse`).
 - Postman for testing API endpoints.
 - A MySQL database.
 

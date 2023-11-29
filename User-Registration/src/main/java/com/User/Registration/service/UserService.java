@@ -4,10 +4,20 @@
  */
 package com.User.Registration.service;
 
+import com.User.Registration.model.User;
+import java.util.List;
+
 /**
  *
  * @author 91976
  */
 public interface UserService {
     
+    User createUser(User user);
+    
+    List<User>getAllUser();
+    
+    User updateUser(User user,Integer Id);
+    
+    void deleteUser(Integer id);
 }

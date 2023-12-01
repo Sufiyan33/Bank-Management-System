@@ -14,13 +14,13 @@ public class OTPDetails {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-	
+
 	@Column(unique = true)
 	private String accountNumber;
-	
+
 	@Column
 	private String otp;
-	
+
 	@Column
 	private LocalDateTime generatedAt;
 
@@ -55,7 +55,4 @@ public class OTPDetails {
 	public void setGeneratedAt(LocalDateTime generatedAt) {
 		this.generatedAt = generatedAt;
 	}
-	
-	
-	
 }

@@ -6,6 +6,7 @@ import java.util.Map;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -47,5 +48,10 @@ public class AccountController {
 		Map<String, String> response = new HashMap<>();
 		response.put("msg", "PIN Created successfully");
 		return new ResponseEntity<>(response, HttpStatus.OK);
+	}
+	
+	@GetMapping("message")
+	public String demo() {
+		return "testing Api's";
 	}
 }

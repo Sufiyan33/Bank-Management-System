@@ -2,6 +2,7 @@ package com.bank.web.serviceImpl;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.stereotype.Service;
 
 import com.bank.web.entity.Account;
 import com.bank.web.entity.User;
@@ -10,12 +11,12 @@ import com.bank.web.exception.UnauthorizedException;
 import com.bank.web.repository.AccountRepository;
 import com.bank.web.service.AccountService;
 
+@Service
 public class AccountServiceImpl implements AccountService {
 
 	@Autowired
 	private AccountRepository accountRepository;
 	
-	@Autowired
 	private PasswordEncoder passwordEncoder;
 
 	@Override

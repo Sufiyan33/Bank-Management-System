@@ -1,7 +1,18 @@
 package com.bank.web.controller;
 
+import java.util.HashMap;
+import java.util.Map;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import com.bank.web.dto.PinRequest;
+import com.bank.web.service.AccountService;
+import com.bank.web.util.LoggedInUser;
 
 @RestController
 @RequestMapping("/api/account")
@@ -24,4 +35,15 @@ public class AccountController {
 	 * 
 	 * 7 - getAllTransactionsByAccountNumber
 	 */
+	
+	@Autowired
+	private AccountService accountService;
+	
+	public ResponseEntity<?> createPin(@RequestBody PinRequest pinRequest){
+		accountService.generatePin(LoggedInUser.getAccountNumber(), pinRequest.getPassword(), pinRequest.getPin());
+		
+		Map<String, String> response = new HashMap<>();
+		response.put("msg", "PIN Created successfully");
+		return new ResponseEntity<>(response, HttpStatus.OK);
+	}
 }

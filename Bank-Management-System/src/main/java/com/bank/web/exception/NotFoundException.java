@@ -1,10 +1,11 @@
 package com.bank.web.exception;
 
-public class AcountDoesNotExists extends RuntimeException{
+public class NotFoundException extends RuntimeException{
 
 	private static final long serialVersionUID = 1L;
-
-	public AcountDoesNotExists(String message) {
+	
+	public NotFoundException(String message) {
 		super(message);
 	}
+
 }

@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -53,5 +54,10 @@ public class AccountController {
 	@GetMapping("message")
 	public String demo() {
 		return "testing Api's";
+	}
+	@PostMapping("/withdraw/{accountNumeber}/{pin}/{aamount}")
+	public ResponseEntity<?> cashWithdrawal(@PathVariable String accountNumber, @PathVariable String pin, @PathVariable double amount){
+		accountService.cashWithdrawal(accountNumber, pin, amount);
+		return new ResponseEntity<>(accountService, HttpStatus.OK);
 	}
 }

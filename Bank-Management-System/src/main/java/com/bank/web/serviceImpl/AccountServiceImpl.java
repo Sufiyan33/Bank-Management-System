@@ -65,8 +65,8 @@ public class AccountServiceImpl implements AccountService {
 		if (account == null) {
 			throw new NotFoundException("Account is not found");
 		}
-		if(account.getPin().equals(pin)) {
-			
+		if(!passwordEncoder.matches(pin, account.getPin())) {
+			throw new UnauthorizedException("Invalid PIN");
 		}
 		
 		if (account.getBalance() < amount) {

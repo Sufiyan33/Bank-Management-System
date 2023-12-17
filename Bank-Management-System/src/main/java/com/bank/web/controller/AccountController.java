@@ -56,8 +56,9 @@ public class AccountController {
 		return "testing Api's";
 	}
 	@PostMapping("/withdraw/{accountNumeber}/{pin}/{aamount}")
-	public ResponseEntity<?> cashWithdrawal(@PathVariable String accountNumber, @PathVariable String pin, @PathVariable double amount){
+	public ResponseEntity<?> cashWithdrawal(@PathVariable String accountNumber,
+			@PathVariable String pin, @PathVariable double amount){
 		accountService.cashWithdrawal(accountNumber, pin, amount);
-		return new ResponseEntity<>(accountService, HttpStatus.OK);
+		return ResponseEntity.status(HttpStatus.CREATED).build();
 	}
 }

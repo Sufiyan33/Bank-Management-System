@@ -61,4 +61,10 @@ public class AccountController {
 		accountService.cashWithdrawal(accountNumber, pin, amount);
 		return ResponseEntity.status(HttpStatus.CREATED).build();
 	}
+	@PostMapping("/deposit/{accountNumeber}/{pin}/{aamount}")
+	public ResponseEntity<?> cashDeposit(@PathVariable String accountNumber,
+			@PathVariable String pin, @PathVariable double amount){
+		accountService.cashDeposit(accountNumber, pin, amount);
+		return ResponseEntity.status(HttpStatus.CREATED).build();
+	}
 }

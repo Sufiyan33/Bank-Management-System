@@ -14,6 +14,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.bank.web.dto.PinRequest;
+import com.bank.web.exception.NotFoundException;
+import com.bank.web.exception.UnauthorizedException;
 import com.bank.web.service.AccountService;
 import com.bank.web.util.LoggedInUser;
 
@@ -66,5 +68,27 @@ public class AccountController {
 			@PathVariable String pin, @PathVariable double amount){
 		accountService.cashDeposit(accountNumber, pin, amount);
 		return ResponseEntity.status(HttpStatus.CREATED).build();
+	}
+	
+	@GetMapping("/{accountNumber}/pin/check")
+    public ResponseEntity<Boolean> isPinGenerated(@PathVariable String accountNumber) {
+        try {
+            boolean pinGenerated = accountService.isPinGenerated(accountNumber);
+            return new ResponseEntity<>(pinGenerated, HttpStatus.OK);
+        } catch (NotFoundException e) {
+            return new ResponseEntity<>(false, HttpStatus.NOT_FOUND);
+        } catch (UnauthorizedException e) {
+            return new ResponseEntity<>(false, HttpStatus.UNAUTHORIZED);
+        } catch (Exception e) {
+            return new ResponseEntity<>(false, HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+    }
+	
+	@GetMapping("/pin/update/{oldPin}")
+	public ResponseEntity<?> updatePin(@RequestBody PinRequest pinRequest, @PathVariable String oldPin){
+		accountService.updatePin(LoggedInUser.getAccountNumber(), oldPin, pinRequest.getPassword(), pinRequest.getPin());
+		Map<String, String> response = new HashMap<>();
+		response.put("msg", "PIN Updated successfully");
+		return new ResponseEntity<>(response, HttpStatus.OK);
 	}
 }

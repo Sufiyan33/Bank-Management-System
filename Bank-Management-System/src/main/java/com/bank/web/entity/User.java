@@ -83,7 +83,7 @@ public class User {
 	}
 
 	public void setOtpRetryCount(int otpRetryCount) {
-		this.otpRetryCount = otpRetryCount;
+		this.otpRetryCount =otpRetryCount;
 	}
 
 	public LocalDateTime getLastOtpRequestTime() {
